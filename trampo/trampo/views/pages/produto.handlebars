@@ -1,0 +1,104 @@
+<nav class="navbar navbar-dark " style="background-color: black ; height: 75px;">
+  <a class="navbar-brand text-light ml-5" style="font-size: 27px;" href="/">O`Clock</a>
+  <form class="form-inline mr-5" class="conta">
+    <div style="display: flex; flex-direction:column;">
+    <img src="img/shopping-cart.png" alt="user" style="width: 24%;" class="ml-5 mt-1">
+    <a class="ml-3" id="eita" style="color: white;" href="/carrinho">Meu Carrinho</a>
+    </div>
+     <div style="display: flex; flex-direction:column;">
+    <img src="img/user.png" alt="user" style="width: 24%;" class="ml-5 mt-1">
+    <a class="ml-3" id="eita" style="color: white;" href="/profile">Minha Conta</a>
+    </div>
+     
+  </form>
+</nav>
+<nav class="nav justify-content-center bg-secondary">
+  
+<div class="input-group mb-3 mt-2" style="width: 18rem; margin-left: 75%;">
+  <input type="text" class="form-control bg-transparent " id="search-item"  onkeyup="search()" style="color: White ; overflow:white;" placeholder="Produto..." aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+      <button class="btn btn-outline-secondary bg-dark" type="button" ><i class="fa fa-search"></i></button>
+  </div>
+</div>
+
+  
+</nav>
+
+
+
+<div >
+    <div style="display:flex; flex-direction:row; flex-wrap: wrap; " >
+    {{#each valores}}
+    <div class="card mt-5 ml-5 produtos" style="width: 18rem; "  >
+      <div class="card-header ">
+        {{this.categoria}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" style="margin-left: 15%;">{{this.nome}}</h5>
+        
+        <a href="/carrinho/{{id}}"><button type="button" name="codigo"  class="btn btn-warning ml-5">Comprar</button></a>
+      </div>
+      <div style="display:flex; flex-direction:row; flex-wrap: wrap; ">
+      <a href="/deletar/{{id}}"><button type="button" class="btn btn-danger" style="width: 9rem;">X</button></a>
+      <a href="/editar/{{id}}"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" style="width: 8.8rem;"><img src="img/editar.png" style="width: 1.3rem; margin-top:-5%;"></button></a>
+      </div>
+    </div>
+    {{/each}}
+    
+    </div>
+    </div>
+ 
+</div>
+
+ <div class="card mt-5 ml-5" style="width: 18rem; ">
+      <div class="card-header">
+      
+      </div>
+      <div class="card-body" style=" display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <h5 class="card-title" >Deseja Cadastrar Mais Algum Produto?</h5>
+        
+        <button type="button" class="btn btn-light " data-toggle="modal" data-target="#exampleModal"><img src="img/mais.png" style="width: 2rem;"></button>
+      </div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastro de Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/produtos" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Nome do Produto:</label>
+                <input type="text" class="form-control" id="inputEmail4" name="produto" placeholder="Relógio...">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Preço:</label>
+                <input type="text" class="form-control" id="inputPassword4" name="preco" placeholder="R$ 150...">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Categoria:</label>
+              <input type="text" class="form-control" id="inputAddress" name="cate" placeholder="Esportivo...">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Descrição:</label>
+              <input type="text" class="form-control" id="inputAddress2" name="desc" placeholder="Modelo novo casio...">
+            </div>
+            <div class="form-row">
+              <div style="margin-left: 10%; position:relative; left:45%;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-warning">Cadastrar</button>
+              </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+

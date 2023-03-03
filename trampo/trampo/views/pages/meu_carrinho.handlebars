@@ -1,0 +1,55 @@
+<nav class="navbar navbar-dark " style="background-color: black ; height: 75px;">
+  <a class="navbar-brand text-light ml-5" style="font-size: 27px;" href="/">O`Clock</a>
+  <form class="form-inline mr-5" class="conta">
+    <div style="display: flex; flex-direction:column;">
+    <img src="/img/carrinho.png" alt="user" style="width: 24%;" class="ml-5 mt-1">
+    <a class="ml-3" style="color: yellow;" href="/carrinho">Meu Carrinho</a>
+    </div>
+     <div style="display: flex; flex-direction:column;">
+    <img src="/img/user.png" alt="user" style="width: 24%;" class="ml-5 mt-1">
+    <a class="ml-3" style="color: white;" href="/profile">Minha Conta</a>
+    </div>
+     
+  </form>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid mt-5" style="width: 40rem; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+  
+  <div class="container">
+    <h3 class="display-5">{{produto.nome}}</h3>
+    <p class="ml-3">Preço: {{produto.preco}} </p>
+
+    <p class="lead mt-5">Cartão:</p>
+    <div class="divisao">
+      <div>
+        <input type="radio" name="caton" value="Débito">
+        <label for="caton">Débito</label>
+      </div>
+      <div style="margin-left: 5%;">
+        <input type="radio" name="caton" value="Débito">
+        <label for="caton">Crédito</label>
+      </div>
+    </div>
+      <div>
+        <label for="bandeira">Selecione a bandeira:</label>
+        <select name="bandeira">
+          <option value="">---Selecione a Bandeira---</option>
+          <option value="">Mastercard</option>
+          <option value="">Visa</option>
+          <option value="">Elo</option>
+          <option value="">American Express</option>
+          <option value="">Hipercard</option>
+        </select>
+      </div>
+      <button class="btn btn-warning mt-3" style="margin-left: 75%; width:7rem;">Pagar</button>
+  </div>
+  <hr>
+    <div class="container">
+      <h3 class="display-5">Outras Formas de Pagamento:</h3>
+      <div class=" mt-4" style="margin-left:25%;">
+        <button class="btn btn-warning">Gerar Boleto</button>
+        <button class="btn btn-warning" style="margin-left: 20%; width:5rem;">PIX</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div style="background-color: black ; height:730px; width:100%;"></div>
+
+<div style="height:400px; width:500px; position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white;">
+  <div style="width:25rem; position: absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+    <h3 class="card-title ml-1">Login</h5>
+    <hr class="bg-warning ml-1" style="width: 30% ;">
+   
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email:</label>
+        <input type="email" class="form-control mb-3" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Senha:</label>
+        <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Digite sua senha">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Lembrar de mim?</label>
+      </div>
+      <div class="form-group">
+        <a href="/cadastrar" class="topia">Ainda não possui cadastro?</a>
+      </div>
+      <button type="submit" class="btn btn-light text-light" style="width:150px; margin-left:30%; background-color:black;">Entrar</button>
+    </form>
+  </div>
+</div>
